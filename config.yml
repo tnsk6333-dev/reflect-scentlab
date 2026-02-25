@@ -1,7 +1,10 @@
 backend:
   name: github
-  repo: tnsk6333-dev/reflect-scentlab # 사용자님의 저장소 주소
-  branch: main # 브랜치 이름이 main인지 확인하세요 (보통 기본값)
+  repo: tnsk6333-dev/reflect-scentlab # 사용자님의 저장소
+  branch: main
+  base_url: https://cms-proxy.tnsk6333.workers.dev # 제가 설정한 로그인 통로
+  auth_endpoint: /auth
+  app_id: v23libZNjRnPUe1e2r4 # 제공해주신 Client ID
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
