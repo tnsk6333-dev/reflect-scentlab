@@ -2,7 +2,7 @@ backend:
   name: github
   repo: tnsk6333-dev/reflect-scentlab
   branch: main
-  base_url: https://cms-proxy.tnsk6333.workers.dev
+  base_url: https://cms-proxy.tnsk6333.workers.dev # 제가 설정한 로그인 통로
   auth_endpoint: /auth
 
 media_folder: "images/uploads"
@@ -24,3 +24,7 @@ collections:
           - { label: "인스타그램 ID", name: "instaId", widget: "string" }
           - { label: "구글 시트 URL", name: "sheetUrl", widget: "string" }
           - { label: "메인 히어로 이미지", name: "heroImage", widget: "image" }
+          - { label: "조향의 철학 이미지", name: "philosophyImage", widget: "image" }
+          - { label: "시그니처 퍼퓸 이미지", name: "signatureImage", widget: "image" }
+          - { label: "롤온 오일 이미지", name: "rollonImage", widget: "image" }
+          - { label: "아로마 에센스 이미지", name: "essenceImage", widget: "image" }
