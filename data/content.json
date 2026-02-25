@@ -1,15 +1,15 @@
 {
-  "siteName": "reflect.scentlab",
-  "themeColor": "#9A8B7E",
-  "instaId": "reflect.scentlab",
-  "sheetUrl": "https://script.google.com/macros/s/AKfycbyrDzcecU4ClTYZsL2CNyACKoWFJp3ozNEjG_tZF2VLXA07u5xXTD1rth7PL8d2vx0PVg/exec",
-  "heroImage": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1920&q=80",
-  "philosophyImage": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
-  "signatureImage": "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=800&q=80",
-  "rollonImage": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1920&q=80",
+  "heroImage": "/images/uploads/hero.jpg.png",
+  "signatureImage": "/images/uploads/signature.jpg.png",
+  "philosophyImage": "/images/uploads/philosophy.jpg.png",
   "essenceImage": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80",
-  "instaImage1": "https://via.placeholder.com/600",
+  "sheetUrl": "https://script.google.com/macros/s/AKfycbyrDzcecU4ClTYZsL2CNyACKoWFJp3ozNEjG_tZF2VLXA07u5xXTD1rth7PL8d2vx0PVg/exec",
+  "instaImage1": "/images/uploads/puple.jpg.png",
   "instaImage2": "https://via.placeholder.com/600",
+  "siteName": "reflect.scentlab",
   "instaImage3": "https://via.placeholder.com/600",
-  "instaImage4": "https://via.placeholder.com/600"
+  "instaImage4": "https://via.placeholder.com/600",
+  "instaId": "reflect.scentlab",
+  "themeColor": "#9A8B7E",
+  "rollonImage": "/images/uploads/rollon.kpg.png"
 }
