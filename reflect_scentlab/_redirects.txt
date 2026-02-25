@@ -1,3 +1,0 @@
-/test      /test.html      200
-/admin     /admin.html     200
-/product   /product.html   200
