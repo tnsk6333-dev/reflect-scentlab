@@ -2,7 +2,7 @@ backend:
   name: github
   repo: tnsk6333-dev/reflect-scentlab
   branch: main
-  base_url: https://reflect-auth.tnsk6333.workers.dev # 방금 만든 문지기 주소
+  base_url: https://reflect-auth.tnsk6333.workers.dev
   auth_endpoint: /auth
 
 media_folder: "images/uploads"
@@ -16,7 +16,7 @@ collections:
       preview: false
     files:
       - name: "content"
-        label: "메인 콘텐츠 수정"
+        label: "메인 콘텐츠 및 인스타그램 수정"
         file: "data/content.json"
         fields:
           - { label: "사이트 이름", name: "siteName", widget: "string" }
@@ -28,3 +28,7 @@ collections:
           - { label: "시그니처 퍼퓸 이미지", name: "signatureImage", widget: "image" }
           - { label: "롤온 오일 이미지", name: "rollonImage", widget: "image" }
           - { label: "아로마 에센스 이미지", name: "essenceImage", widget: "image" }
+          - { label: "인스타그램 이미지 1", name: "instaImage1", widget: "image" }
+          - { label: "인스타그램 이미지 2", name: "instaImage2", widget: "image" }
+          - { label: "인스타그램 이미지 3", name: "instaImage3", widget: "image" }
+          - { label: "인스타그램 이미지 4", name: "instaImage4", widget: "image" }
