@@ -4,7 +4,7 @@ backend:
   branch: main
   base_url: https://cms-proxy.tnsk6333.workers.dev # 제가 설정한 로그인 통로
   auth_endpoint: /auth
-  app_id: v23libZNjRnPUe1e2r4 # 제공해주신 Client ID
+  app_id: Ov23libZNjRnPUe1e2r4 # 제공해주신 Client ID
 
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
