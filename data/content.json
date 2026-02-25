@@ -1,11 +1,15 @@
 {
-  "heroImage": "/images/uploads/hero.jpg.png",
-  "signatureImage": "/images/uploads/signature.jpg.png",
-  "philosophyImage": "/images/uploads/philosophy.jpg.png",
-  "essenceImage": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80",
-  "sheetUrl": "https://script.google.com/macros/s/AKfycbxU7lmkxP0pIBTMdCQs-svdBGnqeiBEb915bDFhhkRG-vdHZ0rD-X0XtfRc9hcTvONhDQ/exec",
   "siteName": "reflect.scentlab",
-  "instaId": "reflect.scentlab",
   "themeColor": "#9A8B7E",
-  "rollonImage": "/images/uploads/rollon.kpg.png"
+  "instaId": "reflect.scentlab",
+  "sheetUrl": "",
+  "heroImage": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1920&q=80",
+  "philosophyImage": "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80",
+  "signatureImage": "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=800&q=80",
+  "rollonImage": "https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80",
+  "essenceImage": "https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80",
+  "instaImage1": "https://via.placeholder.com/600",
+  "instaImage2": "https://via.placeholder.com/600",
+  "instaImage3": "https://via.placeholder.com/600",
+  "instaImage4": "https://via.placeholder.com/600"
 }
