@@ -1,8 +1,8 @@
 backend:
   name: github
-  repo: tnsk6333-dev/reflect-scentlab # 사용자님의 저장소
+  repo: tnsk6333-dev/reflect-scentlab # 이 부분이 사용자님의 저장소 이름과 똑같아야 합니다.
   branch: main
-  base_url: https://cms-proxy.tnsk6333.workers.dev # 제가 설정한 로그인 통로
+  base_url: https://cms-proxy.tnsk6333.workers.dev
   auth_endpoint: /auth
   app_id: Ov23libZNjRnPUe1e2r4 # 제공해주신 Client ID
 
@@ -29,3 +29,4 @@ collections:
           - { label: "시그니처 퍼퓸 이미지", name: "signatureImage", widget: "image" }
           - { label: "롤온 오일 이미지", name: "rollonImage", widget: "image" }
           - { label: "아로마 에센스 이미지", name: "essenceImage", widget: "image" }
+
