@@ -17,12 +17,11 @@
 </head>
 <body>
     <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-[#FDFCFB] border-b border-[#E8E2DA] flex justify-between items-center">
-        <a href="/index.html" id="display-site-name" class="text-2xl font-serif font-bold">reflect.scentlab</a>
-        <a href="/index.html" class="text-sm uppercase tracking-widest text-[#2D241E]/70">Exit</a>
+        <a href="./index.html" id="display-site-name" class="text-2xl font-serif font-bold">reflect.scentlab</a>
+        <a href="./index.html" class="text-sm uppercase tracking-widest text-[#2D241E]/70">Exit</a>
     </nav>
 
     <div class="min-h-screen pt-32 px-6 flex flex-col items-center max-w-2xl mx-auto pb-20">
-        <!-- 질문 섹션 -->
         <div id="question-container" class="w-full text-center">
             <div class="mb-16">
                 <div class="flex justify-between text-[10px] uppercase tracking-widest text-[#9A8B7E] font-bold mb-2">
@@ -37,7 +36,6 @@
             <div id="options-container" class="grid gap-4 fade-in"></div>
         </div>
 
-        <!-- 신청 폼 섹션 -->
         <div id="form-container" class="w-full hidden fade-in">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-serif mb-4">체험단 신청하기</h2>
@@ -89,19 +87,15 @@
             </form>
         </div>
 
-        <!-- 완료 섹션 -->
         <div id="finish-container" class="w-full text-center hidden fade-in">
             <div class="w-20 h-20 bg-[#9A8B7E] rounded-full flex items-center justify-center mx-auto mb-8 text-white shadow-lg"><i data-lucide="check" class="w-10 h-10"></i></div>
             <h2 class="text-3xl font-serif mb-4">신청이 완료되었습니다</h2>
-            <p class="text-[#2D241E]/60 mb-10 leading-relaxed">당신만의 향기를 찾기 위한 여정에 참여해주셔서 감사합니다.<br>체험단 선정 결과는 기재해주신 연락처로 개별 안내드리겠습니다.</p>
-            <a href="/index.html" class="bg-[#2D241E] text-white px-10 py-4 rounded-full inline-block font-bold">홈으로 돌아가기</a>
+            <p class="text-[#2D241E]/60 mb-10 leading-relaxed">당신만의 향기를 찾기 위한 여정에 참여해주셔서 감사합니다.</p>
+            <a href="./index.html" class="bg-[#2D241E] text-white px-10 py-4 rounded-full inline-block font-bold">홈으로 돌아가기</a>
         </div>
     </div>
 
     <script>
-        // ★ 여기에 사용자님의 구글 웹 앱 URL을 붙여넣으세요 ★
-        const GOOGLE_SHEET_URL = "https://script.google.com/macros/s/AKfycbxU7lmkxP0pIBTMdCQs-svdBGnqeiBEb915bDFhhkRG-vdHZ0rD-X0XtfRc9hcTvONhDQ/exec";
-
         const questions = [
             { text: "당신의 피부에 닿을 첫 번째 기억은?", options: ['새벽 안개가 자욱한 숲속', '따스한 햇살이 드는 하얀 침실', '비 온 뒤 젖은 흙 내음의 정원', '벽난로가 타오르는 아늑한 서재'] },
             { text: "오늘 채우고 싶은 온도는?", options: ['차갑고 선명한 청량함', '부드럽고 포근한 온기', '차분하고 깊이 있는 무게감', '투명하고 맑은 가벼움'] },
@@ -109,7 +103,7 @@
         ];
         let currentStep = 0;
 
-        // 전화번호 자동 하이픈 기능
+        // 전화번호 하이픈 자동 생성
         const phoneInput = document.getElementById('phone-input');
         if (phoneInput) {
             phoneInput.addEventListener('input', function(e) {
@@ -154,12 +148,23 @@
 
         async function finishTest(e) {
             e.preventDefault();
+
+            // 1. 관리자 설정 파일에서 구글 시트 URL 가져오기
+            let sheetUrl = "";
+            try {
+                const response = await fetch('./data/content.json');
+                const content = await response.json();
+                sheetUrl = content.sheetUrl;
+            } catch (err) {
+                console.log("설정 로드 실패, 기본값 사용 시도");
+            }
+
             const formData = new FormData(e.target);
             const params = new URLSearchParams(formData);
 
-            if (GOOGLE_SHEET_URL && GOOGLE_SHEET_URL.startsWith("http")) {
+            if (sheetUrl && sheetUrl.startsWith("http")) {
                 try { 
-                    fetch(GOOGLE_SHEET_URL, { 
+                    fetch(sheetUrl, { 
                         method: 'POST', 
                         mode: 'no-cors', 
                         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -177,8 +182,6 @@
         }
 
         window.onload = function() {
-            const savedName = localStorage.getItem('siteName');
-            if(savedName) document.getElementById('display-site-name').innerText = savedName;
             showQuestion();
             lucide.createIcons();
         };
