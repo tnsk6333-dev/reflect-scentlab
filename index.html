@@ -13,29 +13,24 @@
         .fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .transition-soft { transition: all 0.3s ease; }
-        .card-shadow { box-shadow: 0 10px 30px -10px rgba(45, 36, 30, 0.1); }
     </style>
 </head>
 <body>
-    <!-- 네비게이션 -->
     <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-[#FDFCFB]/80 backdrop-blur-md border-b border-[#E8E2DA] flex justify-between items-center">
-        <a href="/index.html" id="display-site-name" class="text-3xl font-serif font-bold tracking-tighter transition-soft">reflect.scentlab</a>
+        <a href="./index.html" id="display-site-name" class="text-3xl font-serif font-bold tracking-tighter transition-soft">reflect.scentlab</a>
         <div class="hidden md:flex items-center space-x-8">
-            <a href="/index.html" class="text-sm uppercase tracking-widest font-bold opacity-50 hover:opacity-100 transition-soft">Home</a>
-            <a href="/product.html" class="text-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-soft">Product</a>
-            <a href="/admin.html" class="text-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-soft">Admin</a>
-            <a href="/test.html" id="btn-nav-test" class="text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase transition-soft">Find My Scent</a>
+            <a href="./index.html" class="text-sm uppercase tracking-widest font-bold opacity-50 hover:opacity-100 transition-soft">Home</a>
+            <a href="./product.html" class="text-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-soft">Product</a>
+            <a href="./admin/" class="text-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-soft">Admin</a>
+            <a href="./test.html" id="btn-nav-test" class="text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase transition-soft">Find My Scent</a>
         </div>
     </nav>
 
-    <!-- 히어로 -->
     <section class="relative h-[90vh] flex items-center justify-center pt-20 fade-in">
-        <div class="absolute inset-0 z-0"><img id="img-hero" src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=1920&q=80" class="w-full h-full object-cover opacity-40"></div>
+        <div class="absolute inset-0 z-0"><img id="img-hero" src="" class="w-full h-full object-cover opacity-40"></div>
         <div class="relative z-10 text-center max-w-4xl px-6">
-            <span id="hero-sub" class="inline-block uppercase tracking-[0.3em] text-xs mb-6 font-bold">Personalized Fragrance Experience</span>
             <h1 class="text-5xl md:text-7xl font-serif mb-8 leading-tight">당신의 내면을 비추는<br>단 하나의 향기</h1>
-            <p class="text-lg text-[#2D241E]/70 mb-10 max-w-2xl mx-auto leading-relaxed">가장 개인적인 기억과 취향이 담긴 당신만의 아로마를 만나보세요.</p>
-            <a href="/test.html" id="btn-hero-test" class="text-white px-10 py-5 rounded-full inline-block font-bold tracking-widest transition-soft shadow-lg">나만의 향기 찾기</a>
+            <a href="./test.html" id="btn-hero-test" class="text-white px-10 py-5 rounded-full inline-block font-bold tracking-widest transition-soft shadow-lg">나만의 향기 찾기</a>
         </div>
     </section>
 
@@ -43,72 +38,21 @@
     <section class="py-32 bg-white px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
             <div class="relative fade-in">
-                <img id="img-philosophy" src="https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=800&q=80" class="rounded-lg shadow-2xl w-full aspect-[4/5] object-cover">
-                <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-[#FDFCFB] rounded-lg border border-[#E8E2DA] p-6 hidden lg:flex flex-col justify-center shadow-xl">
-                    <span id="philosophy-num" class="text-4xl font-serif mb-2">01</span>
-                    <p class="text-[10px] text-[#2D241E]/60 uppercase tracking-widest">Crafted with Pure Intention</p>
-                </div>
+                <img id="img-philosophy" src="" class="rounded-lg shadow-2xl w-full aspect-[4/5] object-cover">
             </div>
             <div class="fade-in">
                 <h2 class="text-4xl font-serif mb-8">조향의 철학: 본연의 아름다움</h2>
-                <p class="text-[#2D241E]/70 mb-12 leading-relaxed text-lg">우리는 향기가 단순한 냄새가 아닌, 한 사람의 정체성을 드러내는 가장 강력한 수단이라고 믿습니다. 최상급 천연 원료와 현대적인 조향 기술을 결합하여, 인위적이지 않은 자연스러운 우아함을 추구합니다.</p>
-                <div class="space-y-10">
-                    <div class="flex items-start space-x-6">
-                        <div class="circle-note w-12 h-12 rounded-full border border-[#E8E2DA] flex items-center justify-center flex-shrink-0 bg-[#FDFCFB]"><span class="text-[10px] font-serif font-bold">TOP</span></div>
-                        <div><h4 class="font-bold mb-1">첫인상의 찰나 (Top Note)</h4><p class="text-sm text-[#2D241E]/60">시트러스와 허브의 청량함이 선사하는 깨끗한 시작.</p></div>
-                    </div>
-                    <div class="flex items-start space-x-6">
-                        <div class="circle-note w-12 h-12 rounded-full border border-[#E8E2DA] flex items-center justify-center flex-shrink-0 bg-[#FDFCFB]"><span class="text-[10px] font-serif font-bold">MID</span></div>
-                        <div><h4 class="font-bold mb-1">진심의 울림 (Middle Note)</h4><p class="text-sm text-[#2D241E]/60">플로럴과 스파이스가 어우러진 깊이 있는 감수성.</p></div>
-                    </div>
-                    <div class="flex items-start space-x-6">
-                        <div class="circle-note w-12 h-12 rounded-full border border-[#E8E2DA] flex items-center justify-center flex-shrink-0 bg-[#FDFCFB]"><span class="text-[10px] font-serif font-bold">BASE</span></div>
-                        <div><h4 class="font-bold mb-1">기억의 잔상 (Base Note)</h4><p class="text-sm text-[#2D241E]/60">우드와 머스크의 따스함이 남기는 긴 여운.</p></div>
-                    </div>
-                </div>
+                <p class="text-[#2D241E]/70 mb-12 leading-relaxed text-lg">우리는 향기가 단순한 냄새가 아닌, 한 사람의 정체성을 드러내는 가장 강력한 수단이라고 믿습니다.</p>
             </div>
         </div>
     </section>
 
-    <!-- 제품 섹션 (Our Essentials) -->
+    <!-- 제품 섹션 -->
     <section class="py-24 bg-[#FDFCFB] px-6">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-serif mb-4">Our Essentials</h2>
-                <p class="text-[#2D241E]/60">순수한 유리병에 담긴 당신의 조각들</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-12 text-center">
-                <div class="fade-in"><img id="img-signature" src="https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=800&q=80" class="aspect-[3/4] object-cover rounded-lg shadow-lg mb-6 w-full hover:scale-105 transition-soft"><h4 class="font-serif text-xl">Signature Perfume</h4></div>
-                <div class="fade-in"><img id="img-rollon" src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&w=800&q=80" class="aspect-[3/4] object-cover rounded-lg shadow-lg mb-6 w-full hover:scale-105 transition-soft"><h4 class="font-serif text-xl">Roll-on Oil</h4></div>
-                <div class="fade-in"><img id="img-essence" src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=800&q=80" class="aspect-[3/4] object-cover rounded-lg shadow-lg mb-6 w-full hover:scale-105 transition-soft"><h4 class="font-serif text-xl">Aroma Essence</h4></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 리뷰 섹션 -->
-    <section class="py-32 bg-[#FDFCFB] px-6 border-t border-[#E8E2DA]">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl font-serif mb-4">향기를 경험한 이들의 기록</h2>
-                <p class="text-[#2D241E]/60">수많은 이들이 찾은 자신만의 고유한 실루엣</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-10 rounded-xl card-shadow border border-[#E8E2DA]/30 text-center">
-                    <div class="flex justify-center mb-6 text-[#9A8B7E]"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
-                    <p class="text-[#2D241E]/80 italic mb-8 leading-relaxed">"제 성향을 이렇게 정확하게 향기로 표현할 수 있다는 게 놀라워요. 매일 아침 이 향수를 뿌릴 때마다 저 자신을 더 사랑하게 되는 기분입니다."</p>
-                    <p class="text-sm font-bold">김*아 고객님</p>
-                </div>
-                <div class="bg-white p-10 rounded-xl card-shadow border border-[#E8E2DA]/30 text-center">
-                    <div class="flex justify-center mb-6 text-[#9A8B7E]"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
-                    <p class="text-[#2D241E]/80 italic mb-8 leading-relaxed">"상담 과정부터 조향까지 너무 특별한 경험이었어요. 저만의 시그니처 향이 생겨서 이제 다른 향수는 못 쓸 것 같아요."</p>
-                    <p class="text-sm font-bold">이*준 고객님</p>
-                </div>
-                <div class="bg-white p-10 rounded-xl card-shadow border border-[#E8E2DA]/30 text-center">
-                    <div class="flex justify-center mb-6 text-[#9A8B7E]"><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i><i data-lucide="star" class="w-4 h-4 fill-current"></i></div>
-                    <p class="text-[#2D241E]/80 italic mb-8 leading-relaxed">"선물용으로 제작했는데 받는 분이 너무 감동하셨어요. 그 사람의 분위기를 향기로 담아낸다는 게 정말 낭만적이네요."</p>
-                    <p class="text-sm font-bold">박*민 고객님</p>
-                </div>
-            </div>
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 text-center">
+            <div class="fade-in"><img id="img-signature" src="" class="aspect-[3/4] object-cover rounded-lg shadow-lg mb-6 w-full"><h4 class="font-serif text-xl">Signature Perfume</h4></div>
+            <div class="fade-in"><img id="img-rollon" src="" class="aspect-[3/4] object-cover rounded-lg shadow-lg mb-6 w-full"><h4 class="font-serif text-xl">Roll-on Oil</h4></div>
+            <div class="fade-in"><img id="img-essence" src="" class="aspect-[3/4] object-cover rounded-lg shadow-lg mb-6 w-full"><h4 class="font-serif text-xl">Aroma Essence</h4></div>
         </div>
     </section>
 
@@ -116,62 +60,70 @@
     <section class="py-32 bg-white px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-12">
-                <div><h3 class="text-2xl font-serif mb-2" id="display-insta-id">@reflect.scentlab</h3><p class="text-sm text-[#2D241E]/60">우리의 일상과 영감을 공유합니다.</p></div>
-                <a href="#" id="link-insta" target="_blank" class="flex items-center space-x-2 text-[#9A8B7E] font-bold uppercase tracking-widest text-sm hover:text-[#2D241E] transition-colors"><i data-lucide="instagram" class="w-5 h-5"></i><span>Follow Us</span></a>
+                <div><h3 class="text-2xl font-serif mb-2" id="display-insta-id">@reflect.scentlab</h3></div>
+                <a href="#" id="link-insta" target="_blank" class="flex items-center space-x-2 font-bold uppercase tracking-widest text-sm"><i data-lucide="instagram" class="w-5 h-5"></i><span>Follow Us</span></a>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="aspect-square overflow-hidden rounded-lg group relative cursor-pointer"><img id="img-insta1" src="https://via.placeholder.com/600" class="w-full h-full object-cover group-hover:scale-110 transition-soft"><div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-soft flex items-center justify-center text-white"><i data-lucide="instagram"></i></div></div>
-                <div class="aspect-square overflow-hidden rounded-lg group relative cursor-pointer"><img id="img-insta2" src="https://via.placeholder.com/600" class="w-full h-full object-cover group-hover:scale-110 transition-soft"><div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-soft flex items-center justify-center text-white"><i data-lucide="instagram"></i></div></div>
-                <div class="aspect-square overflow-hidden rounded-lg group relative cursor-pointer"><img id="img-insta3" src="https://via.placeholder.com/600" class="w-full h-full object-cover group-hover:scale-110 transition-soft"><div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-soft flex items-center justify-center text-white"><i data-lucide="instagram"></i></div></div>
-                <div class="aspect-square overflow-hidden rounded-lg group relative cursor-pointer"><img id="img-insta4" src="https://via.placeholder.com/600" class="w-full h-full object-cover group-hover:scale-110 transition-soft"><div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-soft flex items-center justify-center text-white"><i data-lucide="instagram"></i></div></div>
+                <div class="aspect-square overflow-hidden rounded-lg"><img id="img-insta1" src="" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-lg"><img id="img-insta2" src="" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-lg"><img id="img-insta3" src="" class="w-full h-full object-cover"></div>
+                <div class="aspect-square overflow-hidden rounded-lg"><img id="img-insta4" src="" class="w-full h-full object-cover"></div>
             </div>
         </div>
     </section>
 
-    <!-- 푸터 -->
     <footer class="bg-[#2D241E] text-[#FDFCFB] py-20 px-6 text-center">
         <h2 class="text-2xl font-serif mb-6" id="footer-site-name">reflect.scentlab</h2>
-        <p class="text-[#FDFCFB]/30 text-[10px] uppercase tracking-widest">© 2024 reflect.scentlab. All rights reserved.</p>
     </footer>
 
     <script>
-window.onload = async function() {
-    // 1. CMS 데이터 파일 읽어오기
-    let content = {};
-    try {
-        const response = await fetch('./data/content.json');
-        content = await response.json();
-    } catch (e) {
-        // 로드 실패 시 기본값 사용
-        content = { siteName: "reflect.scentlab", themeColor: "#9A8B7E" };
-    }
+        window.onload = async function() {
+            let content = {};
+            try {
+                const response = await fetch('./data/content.json');
+                content = await response.json();
+            } catch (e) { console.log("기본 데이터를 사용합니다."); }
 
-    const updateEl = (id, value, isColor = false) => {
-        const el = document.getElementById(id);
-        if (el) {
-            if (isColor) el.style.color = value;
-            else el.innerText = value;
-        }
-    };
+            const themeColor = content.themeColor || '#9A8B7E';
+            const siteName = content.siteName || 'reflect.scentlab';
+            const instaId = content.instaId || 'reflect.scentlab';
 
-    // 2. 브랜드 설정 반영
-    const themeColor = content.themeColor || '#9A8B7E';
-    const siteName = content.siteName || 'reflect.scentlab';
+            document.getElementById('display-site-name').innerText = siteName;
+            document.getElementById('display-site-name').style.color = themeColor;
+            document.getElementById('footer-site-name').innerText = siteName;
+            document.getElementById('display-insta-id').innerText = '@' + instaId;
+            
+            const instaLink = document.getElementById('link-insta');
+            if (instaLink) {
+                instaLink.href = 'https://instagram.com/' + instaId;
+                instaLink.style.color = themeColor;
+            }
 
-    updateEl('display-site-name', siteName);
-    updateEl('footer-site-name', siteName);
-    const logo = document.getElementById('display-site-name');
-    if (logo) logo.style.color = themeColor;
-    
-    // 3. 이미지 반영
-    if(content.heroImage) document.getElementById('img-hero').src = content.heroImage;
-    if(content.philosophyImage) document.getElementById('img-philosophy').src = content.philosophyImage;
-    if(content.signatureImage) document.getElementById('img-signature').src = content.signatureImage;
-    if(content.rollonImage) document.getElementById('img-rollon').src = content.rollonImage;
-    if(content.essenceImage) document.getElementById('img-essence').src = content.essenceImage;
+            const btn1 = document.getElementById('btn-nav-test');
+            const btn2 = document.getElementById('btn-hero-test');
+            if (btn1) btn1.style.backgroundColor = themeColor;
+            if (btn2) btn2.style.backgroundColor = themeColor;
 
-    if (window.lucide) lucide.createIcons();
-};
+            // 이미지 매핑
+            const imgMap = {
+                'img-hero': content.heroImage,
+                'img-philosophy': content.philosophyImage,
+                'img-signature': content.signatureImage,
+                'img-rollon': content.rollonImage,
+                'img-essence': content.essenceImage,
+                'img-insta1': content.instaImage1,
+                'img-insta2': content.instaImage2,
+                'img-insta3': content.instaImage3,
+                'img-insta4': content.instaImage4
+            };
+
+            for (const [id, src] of Object.entries(imgMap)) {
+                const el = document.getElementById(id);
+                if (el && src) el.src = src;
+            }
+
+            if (window.lucide) lucide.createIcons();
+        };
     </script>
 </body>
 </html>
