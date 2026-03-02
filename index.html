@@ -50,16 +50,20 @@
         </div>
     </div>
 
-    <!-- 히어로 섹션 -->
+    <!-- 히어로 섹션 (수정됨) -->
     <section class="relative h-[90vh] flex items-center justify-center pt-20 fade-in">
         <div class="absolute inset-0 z-0"><img id="img-hero" src="" class="w-full h-full object-cover opacity-40"></div>
-        <div class="relative z-10 text-center max-w-4xl px-6">
-            <h1 class="text-5xl md:text-7xl font-display mb-10 leading-[1.2] md:leading-tight text-[#3D2B1F] italic font-medium">
-                당신의 내면을 <br class="hidden md:block"> 
-                비추는 <br class="md:hidden"> 
+        <div class="relative z-10 text-center max-w-4xl px-6 mt-16 md:mt-24">
+            <h1 class="text-5xl md:text-7xl font-display mb-8 leading-[1.2] md:leading-tight text-[#3D2B1F] italic font-medium">
+                나를 비추는 <br> 
                 단 하나의 향기
             </h1>
-            <a href="./test.html" id="btn-hero-test" class="text-white px-10 py-5 rounded-full inline-block font-bold tracking-widest transition-soft shadow-lg uppercase text-sm">나만의 향기 찾기</a>
+            <p class="text-base md:text-lg text-[#3D2B1F]/70 mb-10 max-w-3xl mx-auto leading-relaxed">
+                Reflect는 정교한 성향 분석을 통해<br class="hidden md:block"> 
+                당신의 고유한 분위기와 감성을 향기로 치환합니다.<br>
+                가장 개인적인 기억과 취향이 담긴<br class="hidden md:block"> 
+                당신만의 아로마를 만나보세요.
+            </p>
         </div>
     </section>
 
@@ -174,7 +178,7 @@
                 document.getElementById('link-insta').style.color = themeColor;
             }
 
-            ['btn-nav-test', 'btn-mobile-test', 'btn-hero-test'].forEach(id => {
+            ['btn-nav-test', 'btn-mobile-test'].forEach(id => {
                 const el = document.getElementById(id);
                 if (el) el.style.backgroundColor = themeColor;
             });
