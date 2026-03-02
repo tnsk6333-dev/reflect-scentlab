@@ -16,7 +16,7 @@ collections:
       preview: false
     files:
       - name: "content"
-        label: "메인 콘텐츠 및 인스타그램 수정"
+        label: "메인 콘텐츠 및 리뷰 관리"
         file: "data/content.json"
         fields:
           - { label: "사이트 이름", name: "siteName", widget: "string" }
@@ -32,3 +32,13 @@ collections:
           - { label: "인스타그램 이미지 2", name: "instaImage2", widget: "image" }
           - { label: "인스타그램 이미지 3", name: "instaImage3", widget: "image" }
           - { label: "인스타그램 이미지 4", name: "instaImage4", widget: "image" }
+          - label: "고객 리뷰 목록"
+            name: "reviews"
+            widget: "list"
+            summary: "{{fields.reviewerName}} - {{fields.productName}}"
+            fields:
+              - { label: "고객 성함", name: "reviewerName", widget: "string" }
+              - { label: "리뷰 내용", name: "reviewText", widget: "text" }
+              - { label: "구매 제품명", name: "productName", widget: "string" }
+              - { label: "별점 (1-5)", name: "rating", widget: "number", default: 5, min: 1, max: 5 }
+              - { label: "프로필 이미지", name: "userImage", widget: "image", required: false }
