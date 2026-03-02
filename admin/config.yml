@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: tnsk6333-dev/reflect-scentlab
-  branch: main
+  branch: master
   use_pkce: true
   app_id: "Ov23lisMs9k4nN2QSrP6"
 
@@ -32,3 +32,4 @@ collections:
           - { label: "인스타그램 이미지 2", name: "instaImage2", widget: "image" }
           - { label: "인스타그램 이미지 3", name: "instaImage3", widget: "image" }
           - { label: "인스타그램 이미지 4", name: "instaImage4", widget: "image" }
+
