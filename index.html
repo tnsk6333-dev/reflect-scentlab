@@ -54,11 +54,6 @@
     <section class="relative h-[90vh] flex items-center justify-center pt-20 fade-in">
         <div class="absolute inset-0 z-0"><img id="img-hero" src="" class="w-full h-full object-cover opacity-40"></div>
         <div class="relative z-10 text-center max-w-4xl px-6">
-            <!-- 
-                text-[#3D2B1F]: 요청하신 진한 갈색 적용 
-                font-display: Playfair Display 폰트
-                italic: 세련된 기울임꼴
-            -->
             <h1 class="text-5xl md:text-7xl font-display mb-10 leading-[1.2] md:leading-tight text-[#3D2B1F] italic font-medium">
                 당신의 내면을 <br class="hidden md:block"> 
                 비추는 <br class="md:hidden"> 
@@ -163,8 +158,11 @@
             } catch (e) { console.log("기본 데이터를 사용합니다."); }
 
             const themeColor = content.themeColor || '#9A8B7E';
-            const siteName = content.siteName || 'Reflect';
-            const instaId = content.instaId || 'Reflect';
+            let siteName = content.siteName || 'Reflect';
+            
+            // 로고 대문자 고정 로직: 첫 글자를 항상 대문자로 변환
+            siteName = siteName.charAt(0).toUpperCase() + siteName.slice(1);
+            const instaId = siteName;
 
             document.getElementById('display-site-name').innerText = siteName;
             document.getElementById('display-site-name').style.color = themeColor;
