@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reflect</title>
+    <title>reflect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -13,19 +13,41 @@
         .fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .transition-soft { transition: all 0.3s ease; }
+        /* 모바일 메뉴 애니메이션 */
+        #mobile-menu { transition: transform 0.3s ease-in-out; transform: translateY(-100%); }
+        #mobile-menu.active { transform: translateY(0); }
     </style>
 </head>
 <body>
-    <nav class="fixed top-0 left-0 right-0 z-50 px-6 py-4 bg-[#FDFCFB]/80 backdrop-blur-md border-b border-[#E8E2DA] flex justify-between items-center">
-        <a href="./index.html" id="display-site-name" class="text-3xl font-serif font-bold tracking-tighter transition-soft">reflect.scentlab</a>
+    <!-- 상단 내비게이션 -->
+    <nav class="fixed top-0 left-0 right-0 z-[60] px-6 py-4 bg-[#FDFCFB]/80 backdrop-blur-md border-b border-[#E8E2DA] flex justify-between items-center">
+        <a href="./index.html" id="display-site-name" class="text-3xl font-serif font-bold tracking-tighter transition-soft">reflect</a>
+        
+        <!-- PC 메뉴 (기존) -->
         <div class="hidden md:flex items-center space-x-8">
             <a href="./index.html" class="text-sm uppercase tracking-widest font-bold opacity-50 hover:opacity-100 transition-soft">Home</a>
             <a href="./product.html" class="text-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-soft">Product</a>
             <a href="./admin/" class="text-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-soft">Admin</a>
             <a href="./test.html" id="btn-nav-test" class="text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase transition-soft">Find My Scent</a>
         </div>
+
+        <!-- 모바일 햄버거 버튼 (추가됨) -->
+        <button id="menu-toggle" class="md:hidden text-[#2D241E] focus:outline-none">
+            <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
+        </button>
     </nav>
 
+    <!-- 모바일 전용 메뉴창 (추가됨) -->
+    <div id="mobile-menu" class="fixed top-0 left-0 right-0 z-[55] bg-[#FDFCFB] border-b border-[#E8E2DA] pt-24 pb-10 px-6 shadow-xl md:hidden">
+        <div class="flex flex-col space-y-6 text-center">
+            <a href="./index.html" class="text-xl font-serif py-2 border-b border-[#E8E2DA]/30">Home</a>
+            <a href="./product.html" class="text-xl font-serif py-2 border-b border-[#E8E2DA]/30">Product</a>
+            <a href="./admin/" class="text-xl font-serif py-2 border-b border-[#E8E2DA]/30">Admin</a>
+            <a href="./test.html" id="btn-mobile-test" class="text-white py-4 rounded-xl font-bold tracking-widest uppercase shadow-lg">Find My Scent</a>
+        </div>
+    </div>
+
+    <!-- 히어로 섹션 -->
     <section class="relative h-[90vh] flex items-center justify-center pt-20 fade-in">
         <div class="absolute inset-0 z-0"><img id="img-hero" src="" class="w-full h-full object-cover opacity-40"></div>
         <div class="relative z-10 text-center max-w-4xl px-6">
@@ -60,7 +82,7 @@
     <section class="py-32 bg-white px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-12">
-                <div><h3 class="text-2xl font-serif mb-2" id="display-insta-id">@reflect.scentlab</h3></div>
+                <div><h3 class="text-2xl font-serif mb-2" id="display-insta-id">@reflect</h3></div>
                 <a href="#" id="link-insta" target="_blank" class="flex items-center space-x-2 font-bold uppercase tracking-widest text-sm"><i data-lucide="instagram" class="w-5 h-5"></i><span>Follow Us</span></a>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -73,10 +95,23 @@
     </section>
 
     <footer class="bg-[#2D241E] text-[#FDFCFB] py-20 px-6 text-center">
-        <h2 class="text-2xl font-serif mb-6" id="footer-site-name">reflect.scentlab</h2>
+        <h2 class="text-2xl font-serif mb-6" id="footer-site-name">reflect</h2>
     </footer>
 
     <script>
+        // 모바일 메뉴 토글 로직
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            const isOpen = mobileMenu.classList.contains('active');
+            // 아이콘 변경 (메뉴 <-> X)
+            menuIcon.setAttribute('data-lucide', isOpen ? 'x' : 'menu');
+            lucide.createIcons();
+        });
+
         window.onload = async function() {
             let content = {};
             try {
@@ -85,8 +120,8 @@
             } catch (e) { console.log("기본 데이터를 사용합니다."); }
 
             const themeColor = content.themeColor || '#9A8B7E';
-            const siteName = content.siteName || 'reflect.scentlab';
-            const instaId = content.instaId || 'reflect.scentlab';
+            const siteName = content.siteName || 'reflect';
+            const instaId = content.instaId || 'reflect';
 
             document.getElementById('display-site-name').innerText = siteName;
             document.getElementById('display-site-name').style.color = themeColor;
@@ -99,10 +134,13 @@
                 instaLink.style.color = themeColor;
             }
 
-            const btn1 = document.getElementById('btn-nav-test');
-            const btn2 = document.getElementById('btn-hero-test');
-            if (btn1) btn1.style.backgroundColor = themeColor;
-            if (btn2) btn2.style.backgroundColor = themeColor;
+            // 버튼 색상 적용
+            const btnNav = document.getElementById('btn-nav-test');
+            const btnMobile = document.getElementById('btn-mobile-test');
+            const btnHero = document.getElementById('btn-hero-test');
+            if (btnNav) btnNav.style.backgroundColor = themeColor;
+            if (btnMobile) btnMobile.style.backgroundColor = themeColor;
+            if (btnHero) btnHero.style.backgroundColor = themeColor;
 
             // 이미지 매핑
             const imgMap = {
@@ -127,5 +165,3 @@
     </script>
 </body>
 </html>
-
-
