@@ -6,14 +6,17 @@
     <title>Reflect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Inter:wght@400;600&family=Nanum+Pen+Script&family=Nanum+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Playfair Display(고급 세리프) 및 Noto Serif KR 추가 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', 'Nanum Gothic', sans-serif; background-color: #FDFCFB; color: #2D241E; margin: 0; overflow-x: hidden; }
+        body { font-family: 'Inter', sans-serif; background-color: #FDFCFB; color: #2D241E; margin: 0; overflow-x: hidden; }
         .font-serif { font-family: 'Noto Serif KR', serif; }
-        .font-script { font-family: 'Nanum Pen Script', cursive; }
+        /* 하이엔드 감성의 Playfair Display 적용 */
+        .font-display { font-family: 'Playfair Display', 'Noto Serif KR', serif; }
         .fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .transition-soft { transition: all 0.3s ease; }
+        /* 모바일 메뉴 애니메이션 */
         #mobile-menu { transition: all 0.3s ease-in-out; opacity: 0; visibility: hidden; transform: translateY(-20px); }
         #mobile-menu.active { opacity: 1; visibility: visible; transform: translateY(0); }
     </style>
@@ -23,6 +26,7 @@
     <nav class="fixed top-0 left-0 right-0 z-[60] px-6 py-4 bg-[#FDFCFB]/90 backdrop-blur-md border-b border-[#E8E2DA] flex justify-between items-center">
         <a href="./index.html" id="display-site-name" class="text-3xl font-serif font-bold tracking-tighter transition-soft">Reflect</a>
         
+        <!-- PC 메뉴 -->
         <div class="hidden md:flex items-center space-x-8">
             <a href="./index.html" class="text-sm uppercase tracking-widest font-bold opacity-50 hover:opacity-100 transition-soft">Home</a>
             <a href="./product.html" class="text-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-soft">Product</a>
@@ -30,12 +34,13 @@
             <a href="./test.html" id="btn-nav-test" class="text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase transition-soft">Find My Scent</a>
         </div>
 
+        <!-- 모바일 햄버거 버튼 -->
         <button id="menu-toggle" class="md:hidden text-[#2D241E] focus:outline-none">
             <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
         </button>
     </nav>
 
-    <!-- 모바일 메뉴 -->
+    <!-- 모바일 전용 메뉴창 -->
     <div id="mobile-menu" class="fixed top-0 left-0 right-0 z-[55] bg-[#FDFCFB] border-b border-[#E8E2DA] pt-24 pb-10 px-6 shadow-xl md:hidden">
         <div class="flex flex-col space-y-6 text-center">
             <a href="./index.html" class="text-xl font-serif py-2 border-b border-[#E8E2DA]/30">Home</a>
@@ -49,7 +54,8 @@
     <section class="relative h-[90vh] flex items-center justify-center pt-20 fade-in">
         <div class="absolute inset-0 z-0"><img id="img-hero" src="" class="w-full h-full object-cover opacity-40"></div>
         <div class="relative z-10 text-center max-w-4xl px-6">
-            <h1 class="text-6xl md:text-8xl font-script mb-10 leading-[1.1] md:leading-tight text-[#2D241E]">
+            <!-- Playfair Display 폰트 및 기기별 줄바꿈 적용 -->
+            <h1 class="text-5xl md:text-7xl font-display mb-10 leading-[1.2] md:leading-tight text-[#2D241E] italic">
                 당신의 내면을 <br class="hidden md:block"> 
                 비추는 <br class="md:hidden"> 
                 단 하나의 향기
@@ -133,10 +139,11 @@
     </footer>
 
     <script>
-        // 모바일 메뉴 토글
+        // 모바일 메뉴 토글 로직
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
+
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
             const isOpen = mobileMenu.classList.contains('active');
@@ -149,7 +156,7 @@
             try {
                 const response = await fetch('./data/content.json');
                 content = await response.json();
-            } catch (e) { console.log("기본 데이터 사용"); }
+            } catch (e) { console.log("기본 데이터를 사용합니다."); }
 
             const themeColor = content.themeColor || '#9A8B7E';
             const siteName = content.siteName || 'Reflect';
@@ -170,7 +177,7 @@
                 if (el) el.style.backgroundColor = themeColor;
             });
 
-            // 리뷰 렌더링
+            // 리뷰 렌더링 로직
             const reviewsContainer = document.getElementById('reviews-container');
             if (reviewsContainer && content.reviews) {
                 reviewsContainer.innerHTML = '';
@@ -192,16 +199,24 @@
                 });
             }
 
+            // 이미지 매핑
             const imgMap = {
-                'img-hero': content.heroImage, 'img-philosophy': content.philosophyImage,
-                'img-signature': content.signatureImage, 'img-rollon': content.rollonImage,
-                'img-essence': content.essenceImage, 'img-insta1': content.instaImage1,
-                'img-insta2': content.instaImage2, 'img-insta3': content.instaImage3, 'img-insta4': content.instaImage4
+                'img-hero': content.heroImage,
+                'img-philosophy': content.philosophyImage,
+                'img-signature': content.signatureImage,
+                'img-rollon': content.rollonImage,
+                'img-essence': content.essenceImage,
+                'img-insta1': content.instaImage1,
+                'img-insta2': content.instaImage2,
+                'img-insta3': content.instaImage3,
+                'img-insta4': content.instaImage4
             };
+
             for (const [id, src] of Object.entries(imgMap)) {
                 const el = document.getElementById(id);
                 if (el && src) el.src = src;
             }
+
             if (window.lucide) lucide.createIcons();
         };
     </script>
