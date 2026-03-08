@@ -6,32 +6,19 @@
     <title>Process - Reflect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Playfair Display, Noto Serif KR, Cormorant Garamond(필기체 느낌) 추가 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
-        body { background-color: #FDFCFB; color: #2D241E; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
-        .font-serif { font-family: 'Noto Serif KR', serif; }
-        .font-display { font-family: 'Playfair Display', serif; }
-        /* 고풍스러운 필기체 느낌을 위한 Cormorant Garamond Italic */
-        .font-script { font-family: 'Cormorant Garamond', serif; font-style: italic; }
-        
-        .step-card { 
-            background: #FFFFFF; 
-            border: 1px solid #E8E2DA; 
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
-            box-shadow: 0 4px 20px rgba(45, 36, 30, 0.03);
-        }
-        .step-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 20px 40px rgba(45, 36, 30, 0.08);
-            border-color: #9A8B7E;
-        }
+        body { background-color: #FDFCFB; color: #2D241E; font-family: 'Pretendard', sans-serif; margin: 0; overflow-x: hidden; }
+        .font-serif { font-family: 'Pretendard', sans-serif; font-weight: 700; }
+        .font-display { font-family: 'Pretendard', sans-serif; font-weight: 700; }
+        .font-script { font-family: 'Pretendard', sans-serif; font-style: normal; }
+        .step-card { background: #FFFFFF; border: 1px solid #E8E2DA; transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); box-shadow: 0 4px 20px rgba(45, 36, 30, 0.03); }
+        .step-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(45, 36, 30, 0.08); border-color: #9A8B7E; }
         .fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
     </style>
 </head>
 <body>
-    <!-- 상단 내비게이션 (홈페이지와 통일) -->
     <nav class="fixed top-0 left-0 right-0 z-[60] px-6 py-4 bg-[#FDFCFB]/90 backdrop-blur-md border-b border-[#E8E2DA] flex justify-between items-center">
         <a href="index.html" id="display-site-name" class="text-3xl font-serif font-bold tracking-tighter text-[#9A8B7E]">Reflect</a>
         <div class="flex items-center space-x-8">
@@ -43,54 +30,39 @@
     <div class="min-h-screen pt-40 pb-32 px-6 max-w-7xl mx-auto">
         <div class="mb-24 text-center fade-in">
             <span class="text-[#9A8B7E] font-script text-2xl mb-4 block">Product Process</span>
-            <h2 class="text-4xl md:text-6xl font-display tracking-tight">제작 프로세스</h2>
+            <h2 class="text-4xl md:text-6xl font-display tracking-tight font-bold">제작 프로세스</h2>
             <div class="w-12 h-[1px] bg-[#9A8B7E] mx-auto mt-8 opacity-50"></div>
         </div>
 
         <div class="grid md:grid-cols-4 gap-8">
-            <!-- Step 01 -->
             <div class="step-card p-10 rounded-2xl fade-in" style="animation-delay: 0.1s;">
                 <div class="flex justify-between items-start mb-12">
-                    <span class="text-5xl font-display italic opacity-10 text-[#2D241E]">01</span>
-                    <div class="p-3 bg-[#FDFCFB] rounded-full border border-[#E8E2DA]">
-                        <i data-lucide="clipboard-list" class="text-[#9A8B7E] w-6 h-6"></i>
-                    </div>
+                    <span class="text-5xl font-display opacity-10 text-[#2D241E]">01</span>
+                    <div class="p-3 bg-[#FDFCFB] rounded-full border border-[#E8E2DA]"><i data-lucide="clipboard-list" class="text-[#9A8B7E] w-6 h-6"></i></div>
                 </div>
                 <h3 class="text-2xl font-display mb-6">성향분석</h3>
                 <p class="text-[#2D241E]/60 leading-relaxed font-light">전문 컨설턴트와 1:1 프라이빗 퍼스널리티 테스트를 통해 당신의 내면을 탐구합니다.</p>
             </div>
-
-            <!-- Step 02 -->
             <div class="step-card p-10 rounded-2xl fade-in" style="animation-delay: 0.2s;">
                 <div class="flex justify-between items-start mb-12">
-                    <span class="text-5xl font-display italic opacity-10 text-[#2D241E]">02</span>
-                    <div class="p-3 bg-[#FDFCFB] rounded-full border border-[#E8E2DA]">
-                        <i data-lucide="brain" class="text-[#9A8B7E] w-6 h-6"></i>
-                    </div>
+                    <span class="text-5xl font-display opacity-10 text-[#2D241E]">02</span>
+                    <div class="p-3 bg-[#FDFCFB] rounded-full border border-[#E8E2DA]"><i data-lucide="brain" class="text-[#9A8B7E] w-6 h-6"></i></div>
                 </div>
                 <h3 class="text-2xl font-display mb-6">결과분석</h3>
                 <p class="text-[#2D241E]/60 leading-relaxed font-light">데이터 기반 취향 매칭 시스템을 통해 당신에게 가장 어울리는 향료군을 선별합니다.</p>
             </div>
-
-            <!-- Step 03 -->
             <div class="step-card p-10 rounded-2xl fade-in" style="animation-delay: 0.3s;">
                 <div class="flex justify-between items-start mb-12">
-                    <span class="text-5xl font-display italic opacity-10 text-[#2D241E]">03</span>
-                    <div class="p-3 bg-[#FDFCFB] rounded-full border border-[#E8E2DA]">
-                        <i data-lucide="flask-conical" class="text-[#9A8B7E] w-6 h-6"></i>
-                    </div>
+                    <span class="text-5xl font-display opacity-10 text-[#2D241E]">03</span>
+                    <div class="p-3 bg-[#FDFCFB] rounded-full border border-[#E8E2DA]"><i data-lucide="flask-conical" class="text-[#9A8B7E] w-6 h-6"></i></div>
                 </div>
                 <h3 class="text-2xl font-display mb-6">맞춤 블렌딩</h3>
                 <p class="text-[#2D241E]/60 leading-relaxed font-light">선택된 최상급 원료들을 정교한 비율로 조합하여 단 하나의 시그니처 향을 완성합니다.</p>
             </div>
-
-            <!-- Step 04 -->
             <div class="step-card p-10 rounded-2xl fade-in" style="animation-delay: 0.4s;">
                 <div class="flex justify-between items-start mb-12">
-                    <span class="text-5xl font-display italic opacity-10 text-[#2D241E]">04</span>
-                    <div class="p-3 bg-[#FDFCFB] rounded-full border border-[#E8E2DA]">
-                        <i data-lucide="truck" class="text-[#9A8B7E] w-6 h-6"></i>
-                    </div>
+                    <span class="text-5xl font-display opacity-10 text-[#2D241E]">04</span>
+                    <div class="p-3 bg-[#FDFCFB] rounded-full border border-[#E8E2DA]"><i data-lucide="truck" class="text-[#9A8B7E] w-6 h-6"></i></div>
                 </div>
                 <h3 class="text-2xl font-display mb-6">제품 발송</h3>
                 <p class="text-[#2D241E]/60 leading-relaxed font-light">Reflect만의 정성스러운 패키징에 담아 당신의 일상으로 향기를 전달합니다.</p>
@@ -99,9 +71,7 @@
 
         <div class="mt-32 pt-12 border-t border-[#E8E2DA] text-center">
             <p class="text-[#9A8B7E] font-script text-xl mb-4 italic">Every scent tells a story.</p>
-            <p class="text-[#2D241E]/30 text-[10px] uppercase tracking-[0.3em]">
-                Feedback Loop: 고객 피드백 데이터는 더 나은 향기 경험을 위해 소중히 사용됩니다.
-            </p>
+            <p class="text-[#2D241E]/30 text-[10px] uppercase tracking-[0.3em]">Feedback Loop: 고객 피드백 데이터는 더 나은 향기 경험을 위해 소중히 사용됩니다.</p>
         </div>
     </div>
 
@@ -111,9 +81,7 @@
     </footer>
 
     <script>
-        window.onload = function() {
-            if (window.lucide) lucide.createIcons();
-        };
+        window.onload = function() { if (window.lucide) lucide.createIcons(); };
     </script>
 </body>
 </html>
