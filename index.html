@@ -6,55 +6,45 @@
     <title>Reflect</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <!-- Playfair Display(고급 세리프) 및 Noto Serif KR 추가 -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700&family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Pretendard 폰트 추가 -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #FDFCFB; color: #2D241E; margin: 0; overflow-x: hidden; }
-        .font-serif { font-family: 'Noto Serif KR', serif; }
-        /* 하이엔드 감성의 Playfair Display 적용 */
-        .font-display { font-family: 'Playfair Display', 'Noto Serif KR', serif; }
+        body { font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif; background-color: #FDFCFB; color: #2D241E; margin: 0; overflow-x: hidden; }
+        .font-serif { font-family: 'Pretendard', sans-serif; font-weight: 700; }
+        .font-display { font-family: 'Pretendard', sans-serif; font-weight: 700; }
+        .font-script { font-family: 'Pretendard', sans-serif; font-style: normal; }
         .fade-in { animation: fadeIn 1s ease-out forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         .transition-soft { transition: all 0.3s ease; }
-        /* 모바일 메뉴 애니메이션 */
         #mobile-menu { transition: all 0.3s ease-in-out; opacity: 0; visibility: hidden; transform: translateY(-20px); }
         #mobile-menu.active { opacity: 1; visibility: visible; transform: translateY(0); }
     </style>
 </head>
 <body>
-    <!-- 상단 내비게이션 -->
     <nav class="fixed top-0 left-0 right-0 z-[60] px-6 py-4 bg-[#FDFCFB]/90 backdrop-blur-md border-b border-[#E8E2DA] flex justify-between items-center">
         <a href="./index.html" id="display-site-name" class="text-3xl font-serif font-bold tracking-tighter transition-soft">Reflect</a>
-        
-        <!-- PC 메뉴 -->
         <div class="hidden md:flex items-center space-x-8">
             <a href="./index.html" class="text-sm uppercase tracking-widest font-bold opacity-50 hover:opacity-100 transition-soft">Home</a>
             <a href="./product.html" class="text-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-soft">Product</a>
-            <a href="./admin/" class="text-sm uppercase tracking-widest opacity-50 hover:opacity-100 transition-soft">Admin</a>
             <a href="./test.html" id="btn-nav-test" class="text-white px-6 py-2 rounded-full text-xs tracking-widest uppercase transition-soft">Find My Scent</a>
         </div>
-
-        <!-- 모바일 햄버거 버튼 -->
         <button id="menu-toggle" class="md:hidden text-[#2D241E] focus:outline-none">
             <i data-lucide="menu" id="menu-icon" class="w-8 h-8"></i>
         </button>
     </nav>
 
-    <!-- 모바일 전용 메뉴창 -->
     <div id="mobile-menu" class="fixed top-0 left-0 right-0 z-[55] bg-[#FDFCFB] border-b border-[#E8E2DA] pt-24 pb-10 px-6 shadow-xl md:hidden">
         <div class="flex flex-col space-y-6 text-center">
             <a href="./index.html" class="text-xl font-serif py-2 border-b border-[#E8E2DA]/30">Home</a>
             <a href="./product.html" class="text-xl font-serif py-2 border-b border-[#E8E2DA]/30">Product</a>
-            <a href="./admin/" class="text-xl font-serif py-2 border-b border-[#E8E2DA]/30">Admin</a>
             <a href="./test.html" id="btn-mobile-test" class="text-white py-4 rounded-xl font-bold tracking-widest uppercase shadow-lg">Find My Scent</a>
         </div>
     </div>
 
-    <!-- 히어로 섹션 -->
     <section class="relative h-[90vh] flex items-center justify-center pt-20 fade-in">
         <div class="absolute inset-0 z-0"><img id="img-hero" src="" class="w-full h-full object-cover opacity-40"></div>
         <div class="relative z-10 text-center max-w-4xl px-6 mt-40 md:mt-60">
-            <h1 class="text-5xl md:text-7xl font-display mb-8 leading-[1.2] md:leading-tight text-[#3D2B1F] italic font-medium">
+            <h1 class="text-5xl md:text-7xl font-display mb-8 leading-[1.2] md:leading-tight text-[#3D2B1F] font-bold">
                 나를 비추는 <br> 
                 단 하나의 향기
             </h1>
@@ -67,7 +57,6 @@
         </div>
     </section>
 
-    <!-- 조향의 철학 상세 -->
     <section class="py-32 bg-white px-6">
         <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
             <div class="relative fade-in">
@@ -76,7 +65,6 @@
             <div class="fade-in">
                 <h2 class="text-4xl font-serif mb-8">조향의 철학:<br class="md:hidden"> 본연의 아름다움</h2>
                 <p class="text-[#2D241E]/70 mb-12 leading-relaxed text-lg">우리는 향기가 단순한 냄새가 아닌, 한 사람의 정체성을 드러내는 가장 강력한 수단이라고 믿습니다. 최상급 천연 원료와 현대적인 조향 기술을 결합하여, 인위적이지 않은 자연스러운 우아함을 추구합니다.</p>
-                
                 <div class="space-y-8">
                     <div class="flex items-start space-x-6">
                         <div class="w-12 h-12 rounded-full border border-[#E8E2DA] flex items-center justify-center flex-shrink-0 text-[10px] font-bold">TOP</div>
@@ -95,7 +83,6 @@
         </div>
     </section>
 
-    <!-- 제품 섹션 -->
     <section class="py-24 bg-[#FDFCFB] px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-16">
@@ -110,21 +97,17 @@
         </div>
     </section>
 
-    <!-- 리뷰 섹션 -->
     <section class="py-32 bg-[#F9F8F6] px-6">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16"><h2 class="text-4xl font-serif mb-4">향기를 경험한 이들의 기록</h2><p class="text-[#2D241E]/60">수많은 이들이 찾은 자신만의 고유한 실루엣</p></div>
-            <div id="reviews-container" class="grid md:grid-cols-3 gap-8">
-                <!-- 자바스크립트로 렌더링 -->
-            </div>
+            <div id="reviews-container" class="grid md:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
-    <!-- 인스타그램 섹션 -->
     <section class="py-32 bg-white px-6">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-end mb-12">
-                <div><h3 class="text-2xl font-serif mb-2" id="display-insta-id">@reflect.scentlab</h3></div>
+                <div><h3 class="text-2xl font-serif mb-2" id="display-insta-id">@Reflect</h3></div>
                 <a href="#" id="link-insta" target="_blank" class="flex items-center space-x-2 font-bold uppercase tracking-widest text-sm"><i data-lucide="instagram" class="w-5 h-5"></i><span>Follow Us</span></a>
             </div>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -142,7 +125,6 @@
     </footer>
 
     <script>
-        // 모바일 메뉴 토글 로직
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const menuIcon = document.getElementById('menu-icon');
@@ -163,8 +145,6 @@
 
             const themeColor = content.themeColor || '#9A8B7E';
             let siteName = content.siteName || 'Reflect';
-            
-            // 로고 대문자 고정 로직: 첫 글자를 항상 대문자로 변환
             siteName = siteName.charAt(0).toUpperCase() + siteName.slice(1);
             const instaId = 'reflect.scentlab';
 
@@ -183,7 +163,6 @@
                 if (el) el.style.backgroundColor = themeColor;
             });
 
-            // 리뷰 렌더링 로직
             const reviewsContainer = document.getElementById('reviews-container');
             if (reviewsContainer && content.reviews) {
                 reviewsContainer.innerHTML = '';
@@ -205,7 +184,6 @@
                 });
             }
 
-            // 이미지 매핑
             const imgMap = {
                 'img-hero': content.heroImage,
                 'img-philosophy': content.philosophyImage,
